@@ -1,0 +1,20 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.main-content {
+  flex: 1 0 auto;
+  padding: 2rem 0;
+  min-height: calc(100vh - 200px); /* Ensure minimum height for content */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem 0;
+    min-height: calc(100vh - 150px);
+  }
+} 

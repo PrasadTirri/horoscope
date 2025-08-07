@@ -1,0 +1,116 @@
+.zodiac-card {
+  background: rgba(26, 31, 58, 0.8);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  text-decoration: none;
+  color: var(--text-white);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.zodiac-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-cosmic);
+}
+
+.zodiac-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.zodiac-card:hover::before {
+  left: 100%;
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.zodiac-symbol {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.zodiac-card:hover .zodiac-symbol {
+  transform: scale(1.1);
+}
+
+.zodiac-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--accent-gold);
+}
+
+.zodiac-dates {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.zodiac-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.element-label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.element-value {
+  color: var(--accent-gold-light);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.card-hover-effect {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.zodiac-card:hover .card-hover-effect {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-text {
+  color: var(--accent-gold);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .zodiac-card {
+    padding: 1.5rem;
+  }
+  
+  .zodiac-symbol {
+    font-size: 3rem;
+  }
+  
+  .zodiac-name {
+    font-size: 1.3rem;
+  }
+} 

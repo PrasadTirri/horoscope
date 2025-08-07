@@ -1,0 +1,719 @@
+.personalized-horoscope-page {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* Loading and Error States (inherited from HoroscopePage.css) */
+.loading-container,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.loading-text {
+  margin-top: 1rem;
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.error-title {
+  font-size: 2rem;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.back-button {
+  background: var(--gradient-gold);
+  color: var(--primary-dark);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* Back Section */
+.back-section {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  color: var(--accent-gold);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back-link:hover {
+  color: var(--accent-gold-light);
+  transform: translateX(-5px);
+}
+
+/* Personalized Content */
+.personalized-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* User Details Header */
+.user-details-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(26, 31, 58, 0.8);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar-icon {
+  font-size: 2.5rem;
+}
+
+.user-details {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.user-birth-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.birth-date,
+.birth-time {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.zodiac-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: flex-end;
+}
+
+.zodiac-symbol-large {
+  font-size: 4rem;
+  animation: pulse 2s infinite;
+}
+
+.zodiac-details {
+  text-align: right;
+}
+
+.zodiac-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--accent-gold);
+  margin-bottom: 0.25rem;
+}
+
+.zodiac-dates {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.zodiac-element {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.element-label {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.element-value {
+  color: var(--accent-gold-light);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Sections */
+.horoscope-section,
+.tip-section,
+.birth-chart-section,
+.cosmic-guidance-section,
+.planetary-section,
+.growth-section,
+.compatibility-section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(26, 31, 58, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.personalized-intro {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 215, 0, 0.1);
+  border-radius: 12px;
+  border-left: 4px solid var(--accent-gold);
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.horoscope-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  text-align: justify;
+}
+
+/* Lucky Details */
+.lucky-details {
+  margin-bottom: 3rem;
+}
+
+.lucky-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.lucky-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(26, 31, 58, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.lucky-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-cosmic);
+}
+
+.lucky-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.lucky-info {
+  flex: 1;
+}
+
+.lucky-label {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.lucky-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-gold);
+}
+
+/* Tip Section */
+.tip-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.tip-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.tip-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* Birth Chart Insights */
+.chart-insights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.insight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(26, 31, 58, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.insight-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-cosmic);
+}
+
+.insight-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.insight-content {
+  flex: 1;
+}
+
+.insight-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.insight-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-light);
+}
+
+/* Enhanced Cosmic Guidance */
+.guidance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.guidance-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(26, 31, 58, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.guidance-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-cosmic);
+}
+
+.guidance-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.guidance-content {
+  flex: 1;
+}
+
+.guidance-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.guidance-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+/* Planetary Influences */
+.planetary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.planetary-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(26, 31, 58, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.planetary-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-cosmic);
+}
+
+.planetary-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.planetary-content {
+  flex: 1;
+}
+
+.planetary-title {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.planetary-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--accent-gold);
+}
+
+/* Personal Growth */
+.growth-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.growth-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(26, 31, 58, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.growth-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-cosmic);
+}
+
+.growth-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.growth-content {
+  flex: 1;
+}
+
+.growth-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.growth-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+/* Compatibility */
+.compatibility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.compatibility-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(26, 31, 58, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.compatibility-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-gold);
+  box-shadow: var(--shadow-cosmic);
+}
+
+.compatibility-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.compatibility-content {
+  flex: 1;
+}
+
+.compatibility-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.compatibility-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+/* Share Section */
+.share-section {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(26, 31, 58, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.share-title {
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+}
+
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.share-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.share-button.whatsapp {
+  background: #25D366;
+}
+
+.share-button.twitter {
+  background: #1DA1F2;
+}
+
+.share-button.facebook {
+  background: #4267B2;
+}
+
+.share-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.share-icon {
+  font-size: 1.1rem;
+}
+
+/* Another Reading Section */
+.another-reading-section {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(26, 31, 58, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.another-reading-title {
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+}
+
+.another-reading-text {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.another-reading-button {
+  background: var(--gradient-gold);
+  color: var(--primary-dark);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.another-reading-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.button-icon {
+  font-size: 1.2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .personalized-horoscope-page {
+    padding: 1rem 0;
+  }
+  
+  .user-details-header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+  
+  .user-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .zodiac-info {
+    justify-content: center;
+  }
+  
+  .zodiac-details {
+    text-align: center;
+  }
+  
+  .zodiac-element {
+    justify-content: center;
+  }
+  
+  .user-name {
+    font-size: 1.75rem;
+  }
+  
+  .zodiac-name {
+    font-size: 1.5rem;
+  }
+  
+  .chart-insights,
+  .guidance-grid,
+  .planetary-grid,
+  .growth-grid,
+  .compatibility-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .share-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .share-button {
+    width: 200px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-details-header,
+  .horoscope-section,
+  .tip-section,
+  .cosmic-guidance-section,
+  .planetary-section,
+  .growth-section,
+  .compatibility-section,
+  .birth-chart-section,
+  .share-section,
+  .another-reading-section {
+    padding: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .horoscope-text,
+  .tip-text,
+  .intro-text,
+  .guidance-text,
+  .growth-text,
+  .compatibility-text {
+    font-size: 1rem;
+  }
+  
+  .user-name {
+    font-size: 1.5rem;
+  }
+  
+  .zodiac-symbol-large {
+    font-size: 3rem;
+  }
+} 
